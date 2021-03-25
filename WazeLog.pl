@@ -40,7 +40,14 @@ verbo-->[caer].
 verbo-->[presentar].
 verbo-->[arrivar].
 verbo-->[quedar].
+verbo-->[querer].
 
+pronombres-->[yo].
+pronombres-->[nosotros].
+pronombres-->[el].
+pronombres-->[ella].
+pronombres-->[ellas].
+pronombres-->[ellos].
 
 local-->[tienda].
 local-->[pulperia].
@@ -65,7 +72,7 @@ local-->[piscina].
 local-->[ferreteria].
 
 oracion --> sintagma_nominal, sintagma_verbal.
-sintagma_nominal --> local.
+sintagma_nominal --> pronombres.
 sintagma_nominal --> articulo, local.
 %sintagma_nominal --> lugar.
 %sintagma_nominal --> articulo, lugar.
@@ -84,5 +91,10 @@ iniciar():-
     write("Bienvenido a WazeLog la mejor logica de llegar a su destino. \n"),
     write("Por Favor indique el lugar en el que se encuentra."),
     readln(X),
-    write(X).
+    eliminarUltimo(X,Y), 
+    write(X),
+    phrase(oracion,Y).
 
+eliminarUltimo([Head],[]).
+eliminarUltimo([Head,Tail],[Head]).
+eliminarUltimo([Head|Tail],[Head|Tail2]):-eliminarUltimo(Tail,Tail2).
