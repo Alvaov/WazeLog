@@ -1,3 +1,4 @@
+:- dynamic relacionar/1.
 %Análisis de lenguaje estructural
 
 preposiciones-->[en].
@@ -15,7 +16,6 @@ preposiciones-->[tras].
 preposiciones-->[versus].
 
 articulo-->[el].
-articulo-->[ellos].
 articulo-->[la].
 articulo-->[las].
 articulo-->[lo].
@@ -25,22 +25,17 @@ articulo-->[unos].
 articulo-->[una].
 articulo-->[unas].
 
+verbo-->[ir];[voy];[vaya];[va];[vamos];[vayan];[vengo];[van];[venir].
+verbo-->[pasar];[pase];[paso];[pasare];[pasaria];[pasase]. 
+verbo-->[llegar];[llego];[llegue];[llegare];[llegan].
+verbo-->[dirigir];[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].%
+verbo-->[trasladar];[traslado]; [trasladamos]; [trasladare]; [trasladaremos].%
+verbo-->[mover];[muevo];[movi];[movere];[moveremos].
+verbo-->[acudir];[acudi];[acudire];[acudo];[acudiremos];[acudiran].
+verbo-->[asistir];[asisto];[asistire];[asitiremos];[asistimos].
+verbo-->[recorrer];[recorro];[recorrere];[recorreremos];[recorremos].
+verbo-->[querer];[quiero];[queremos].
 
-verbo-->[ir].
-verbo-->[venir].
-verbo-->[pasar].
-verbo-->[llegar].
-verbo-->[dirigir].
-verbo-->[trasladar].
-verbo-->[mover].
-verbo-->[acudir].
-verbo-->[asistir].
-verbo-->[recorrer].
-verbo-->[caer].
-verbo-->[presentar].
-verbo-->[arrivar].
-verbo-->[quedar].
-verbo-->[querer].
 
 pronombres-->[yo].
 pronombres-->[nosotros].
@@ -71,7 +66,10 @@ local-->[puerto].
 local-->[piscina].
 local-->[ferreteria].
 
+
+
 oracion --> sintagma_nominal, sintagma_verbal.
+oracion--> sintagma_verbal.
 sintagma_nominal --> pronombres.
 sintagma_nominal --> articulo, local.
 %sintagma_nominal --> lugar.
