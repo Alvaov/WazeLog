@@ -1,6 +1,6 @@
 :-consult(grafo).
 %Análisis de lenguaje estructural
-preposiciones->[];
+preposiciones-->[].
 preposiciones-->[a].
 preposiciones-->[en].
 preposiciones-->[entre].
@@ -28,18 +28,20 @@ articulo-->[una].
 articulo-->[unas].
 
 
+
 verbo-->[viaje];[viajo];[viajar];[viajamos];[viajaremos].
 verbo-->[ir];[voy];[vaya];[va];[vamos];[vayan];[vengo];[van];[venir].
 verbo-->[pasar];[pase];[paso];[pasare];[pasaria];[pasase]. 
 verbo-->[llegar];[llego];[llegue];[llegare];[llegan].
-verbo-->[dirigir];[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].%
-verbo-->[trasladar];[traslado]; [trasladamos]; [trasladare]; [trasladaremos].%
+verbo-->[dirigir];[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].
+verbo-->[trasladar];[traslado]; [trasladamos]; [trasladare]; [trasladaremos].
 verbo-->[mover];[muevo];[movi];[movere];[moveremos].
 verbo-->[acudir];[acudi];[acudire];[acudo];[acudiremos];[acudiran].
 verbo-->[asistir];[asisto];[asistire];[asitiremos];[asistimos].
 verbo-->[recorrer];[recorro];[recorrere];[recorreremos];[recorremos].
 verbo-->[querer];[quiero];[queremos].
-
+verbo-->[estar];[estoy];[estamos];[estan].
+verbo-->[encontrar];[encuentro];[encontramos].
 
 pronombres-->[yo].
 pronombres-->[nosotros].
@@ -75,8 +77,8 @@ local-->[ferreteria].
 oracion --> sintagma_nominal, sintagma_verbal.
 sintagma_nominal-->[].
 sintagma_nominal --> pronombres.
-sintagma_nominal --> articulo, local.
-sintagma_nominal --> {lugar(X)},[X].
+sintagma_nominal --> preposiciones, articulo, local.
+sintagma_nominal --> preposiciones, {lugar(X)},[X].
 sintagma_verbal --> verbo, sintagma_nominal.
 
 
