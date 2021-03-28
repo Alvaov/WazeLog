@@ -15,6 +15,7 @@ preposiciones-->[so].
 preposiciones-->[sobre].
 preposiciones-->[tras].
 preposiciones-->[versus].
+preposiciones-->[al].
 
 articulo-->[].
 articulo-->[el].
@@ -26,30 +27,44 @@ articulo-->[un].
 articulo-->[unos].
 articulo-->[una].
 articulo-->[unas].
-
+articulo-->[al].
 
 verbo-->[].
-verbo-->[viaje];[viajo];[viajar];[viajamos];[viajaremos].
-verbo-->[ir];[voy];[vaya];[va];[vamos];[vayan];[vengo];[van];[venir].
-verbo-->[pasar];[pase];[paso];[pasare];[pasaria];[pasase]. 
-verbo-->[llegar];[llego];[llegue];[llegare];[llegan].
-verbo-->[dirigir];[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].
-verbo-->[trasladar];[traslado]; [trasladamos]; [trasladare]; [trasladaremos].
-verbo-->[mover];[muevo];[movi];[movere];[moveremos].
-verbo-->[acudir];[acudi];[acudire];[acudo];[acudiremos];[acudiran].
-verbo-->[asistir];[asisto];[asistire];[asitiremos];[asistimos].
-verbo-->[recorrer];[recorro];[recorrere];[recorreremos];[recorremos].
-verbo-->[querer];[quiero];[queremos].
-verbo-->[estar];[estoy];[estamos];[estan].
-verbo-->[encontrar];[encuentro];[encontramos].
-verbo-->[necesito];[necesitar];[necesitamos].
+verbo-->[viaje];[viajo];[viajamos];[viajaremos].
+verbo-->[voy];[vaya];[va];[vamos];[vayan];[vengo];[van].
+verbo-->[pase];[paso];[pasare];[pasaria];[pasase]. 
+verbo-->[llego];[llegue];[llegare];[llegan].
+verbo-->[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].
+verbo-->[traslado]; [trasladamos]; [trasladare]; [trasladaremos].
+verbo-->[muevo];[movi];[movere];[moveremos].
+verbo-->[acudi];[acudire];[acudo];[acudiremos];[acudiran].
+verbo-->[asisto];[asistire];[asitiremos];[asistimos].
+verbo-->[recorro];[recorrere];[recorreremos];[recorremos].
+verbo-->[quiero];[queremos].
+verbo-->[estoy];[estamos];[estan],[estaria].
+verbo-->[soy];[es];[eres].
+verbo-->[encuentro];[encontramos].
+verbo-->[necesito];[necesitamos].
+verbo-->[ocupo];[ocupamos];[ocuparemos];[ocupare].
+verbo-->[gusta];[gustaria];[gustan].
+verbo-->[tengo];[tenemos];[tendria];[tendriamos].
+verbo-->[ubica];[ubicamos];[ubican];[ubico].   
 
+
+infinitivo-->[].
+infinitivo-->[ir];[viajar];[venir];[pasar];[llegar];[trasladar].
+infinitivo-->[mover];[acudir];[asistir];[recorrer];[querer];[estar].
+infinitivo-->[encontrar];[necesitar];[dirigir],[gustar];[tener];[ubicar].
+
+pronombres-->[].
 pronombres-->[yo].
 pronombres-->[nosotros].
 pronombres-->[el].
 pronombres-->[ella].
 pronombres-->[ellas].
 pronombres-->[ellos].
+pronombres-->[me].
+pronombres-->[se].
 
 local-->[tienda].
 local-->[pulperia].
@@ -72,15 +87,18 @@ local-->[verduleria].
 local-->[puerto].
 local-->[piscina].
 local-->[ferreteria].
+local-->[automercado].
 
 adverbio-->[si];[no];[].
+conjuncion-->[];[que].
 
 oracion --> sintagma_nominal, sintagma_verbal.
+oracion--> adverbio.
 sintagma_nominal-->[].
 sintagma_nominal --> pronombres.
 sintagma_nominal --> preposiciones, articulo, local.
 sintagma_nominal --> preposiciones, {lugar(X)},[X].
-sintagma_verbal --> adverbio, verbo, sintagma_nominal.
+sintagma_verbal --> adverbio, verbo, conjuncion, infinitivo, sintagma_nominal.
 
 
 lugar(X):-arco(X,_,_,_,_);arco(_,X,_,_,_).

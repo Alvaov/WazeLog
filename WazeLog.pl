@@ -22,21 +22,38 @@ ubicacion_inicial(Origen):-
 
 lugar(Lista,X):- miembro(X,Lista), arco(X,_,_,_,_),!.
 
+es_local(Lista,X):-
+    miembro(X,Lista),
+    local([X],[]).
+
 
 destinos_intermedios(Lista):-
     write("Excelente, tiene algun destino intermedio? \n"),
     respuesta_usuario(Res_usr),!,
-    existe_destino_intermedio(Res_usr, Nodo),
-    Lista is [Nodo|Lista],
-    destinos_intermedios(Lista1).
+    hecho(Res_usr,Lista).
 
-destinos_intermedios(Lista):-
-    nlp_error,
-    destinos_intermedios(Lista).
+existe_destino_intermedio(Oracion,Lugar):-
+    lugar(Oracion,Lugar),!.
+
+existe_destino_intermedio(Oracion,Lugar):-
+    es_local(Oracion,Local),
+    atom_string(Local,Local_string),
+    string_concat("¿Cual ", Local_string, X),
+    write(X),write("? \n"),
+    respuesta_usuario(Y),
+    existe_destino_intermedio(Y,Lugar),!.
+
+hecho(X,Lista):-
+    miembro(no,X),Lista = [],!.
+
+hecho(X,Lista):-
+    existe_destino_intermedio(X, Nodo),
+    destinos_intermedios(Lista1),
+    append([Nodo],Lista1,Lista),!.
+
+hecho(X,X).
 
 respuesta_usuario(Y):-
     readln(X),
     eliminarUltimo(X,Y),
     oracion(Y,[]).
-
-existe_destino_intermedio(Lista,Lugar):- lugar(Lista,Lugar).
