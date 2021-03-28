@@ -56,4 +56,5 @@ hecho(X,X).
 respuesta_usuario(Y):-
     readln(X),
     eliminarUltimo(X,Y),
-    oracion(Y,[]).
+    oracion(Y,[]),!.
+preguntar_intermedio(Lugar):-write("Tiene algun destino intermedio: \n"),respuesta_usuario(Respuesta),lugar(Respuesta,Lugar).
