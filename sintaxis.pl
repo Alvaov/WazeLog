@@ -43,6 +43,7 @@ verbo-->[querer];[quiero];[queremos].
 verbo-->[estar];[estoy];[estamos];[estan].
 verbo-->[encontrar];[encuentro];[encontramos].
 verbo-->[necesito];[necesitar];[necesitamos].
+infinitivo-->[];[ir].
 
 pronombres-->[yo].
 pronombres-->[nosotros].
@@ -80,7 +81,7 @@ sintagma_nominal-->[].
 sintagma_nominal --> pronombres.
 sintagma_nominal --> preposiciones, articulo, local.
 sintagma_nominal --> preposiciones, {lugar(X)},[X].
-sintagma_verbal --> adverbio, verbo, sintagma_nominal.
+sintagma_verbal --> adverbio, verbo,infinitivo, sintagma_nominal.
 
 
 lugar(X):-arco(X,_,_,_,_);arco(_,X,_,_,_).
