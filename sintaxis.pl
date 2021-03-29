@@ -49,6 +49,7 @@ verbo-->[ocupo];[ocupamos];[ocuparemos];[ocupare].
 verbo-->[gusta];[gustaria];[gustan].
 verbo-->[tengo];[tenemos];[tendria];[tendriamos].
 verbo-->[ubica];[ubicamos];[ubican];[ubico].   
+verbo-->[queda];[quedo];[quedan].
 
 
 infinitivo-->[].
