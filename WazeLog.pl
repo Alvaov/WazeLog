@@ -3,25 +3,36 @@
 %Funcion Inicial
 iniciar():-
     write("Bienvenido a WazeLog la mejor logica de llegar a su destino. \n"),
-    ubicacion_inicial(Punto_incial),
+    write("Por Favor indique el lugar en el que se encuentra. \n"),
+    ubicacion(Punto_incial),
     destinos_intermedios(Destinos_intermedios),
-    append([Punto_incial], Destinos_intermedios, Ruta_completa).
-    give_route(Ruta_completa).
+    write("Por favor indique hacia donde nos dirigimos \n"), 
+    ubicacion(Punto_final),
+    append([Punto_incial], Destinos_intermedios, Ruta_inicial),
+    append(Ruta_inicial, [Punto_final], Destinos),
+    give_route(Destinos,Ruta_completa),
+    write("Su ruta es: "),
+    inversa(Ruta_completa,Ruta_invertida),
+    ruta_es(Ruta_invertida),
+    write("tiempo estimado de viaje: "),
+    duracion(Ruta_completa,Tiempo_recorrido),
+    write(Tiempo_recorrido), write(" horas. \n"),
+    write("Muchas gracias por utilizar WazeLog. \n").
     
 
 nlp_error:-
     write(" Perdon, no te entendi. \n").
 
-ubicacion_inicial(Origen):-
-    write("Por Favor indique el lugar en el que se encuentra. \n"),
+ubicacion(Origen):-
     respuesta_usuario(Y),
     lugar(Y, Origen),!.
 
-ubicacion_inicial(Origen):-
+ubicacion(Origen):-
     nlp_error,
-    ubicacion_inicial(Origen),!.
+    ubicacion(Origen),!.
 
 lugar(Lista,X):- miembro(X,Lista), arco(X,_,_,_,_),!.
+lugar(Lista,X):- miembro(X,Lista), arco(_,X,_,_,_),!.
 
 es_local(Lista,X):-
     miembro(X,Lista),
@@ -59,11 +70,59 @@ respuesta_usuario(Y):-
     eliminarUltimo(X,Y),
     oracion(Y,[]),!.
 
-give_route([Nodo,Nodo],Respuesta):- write_ln("Ya llegaste a tu destino.").
-give_route([Nodo_inicial,Nodo_Final],Respuesta):-dijkstra(Nodo_inicial,Nodo_Final,Respuesta).
+give_route([Nodo,Nodo],Respuesta):- 
+    write_ln("Ya llegaste a tu destino.").
+
+give_route([Nodo_inicial,Nodo_Final],Respuesta):-
+    dijkstra(Nodo_inicial,Nodo_Final,Respuesta).
+
 give_route([Nodo_inicial,Nodo_sig|Resto],Respuesta):- 
     dijkstra(Nodo_inicial,Nodo_sig,Res_parcial), 
+    longitud(Res_parcial,Lenght),
+    Lenght > 0,
     give_route([Nodo_sig|Resto],[Nodo_sig|Respuesta_resto]),
     append(Res_parcial,Respuesta_resto, Respuesta).
-    
-    
+
+give_route(_,[]).
+
+ruta_es([]):-
+    write("Lo siento, no hay ruta"),!.
+
+ruta_es(Ruta):-
+    miembro(X,Ruta),
+    write(X),write(", "),fail.
+
+ruta_es(_):-!.
+
+duracion([_],0).
+
+duracion([Destino_actual,Sig_destino|Resto_destinos],Duracion):-
+    hora_pico(),
+    append([Sig_destino],Resto_destinos,Destinos),
+    duracion(Destinos,Nueva_duracion),
+    arco(Destino_actual,Sig_destino,_,_,X),
+    Duracion is Nueva_duracion + X,!.
+
+duracion([Destino_actual,Sig_destino|Resto_destinos],Duracion):-
+    append([Sig_destino],Resto_destinos,Destinos),
+    duracion(Destinos,Nueva_duracion),
+    arco(Destino_actual,Sig_destino,_,X,_),
+    Duracion is Nueva_duracion + X.
+
+
+hora_pico():-
+    hour_of_day(Hora),
+    rango(Hora).
+
+rango(X):-
+    4 < X, X < 9,!.
+
+rango(X):-
+    11 < X, X < 14,!.
+
+rango(X):-
+    16 < X, X < 21.
+
+hour_of_day(Hour):- get_time(Time),
+    stamp_date_time(Time,FormattedDate,local),
+    date_time_value(hour,FormattedDate,Hour).
