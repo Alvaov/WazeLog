@@ -5,7 +5,8 @@ iniciar():-
     write("Bienvenido a WazeLog la mejor logica de llegar a su destino. \n"),
     ubicacion_inicial(Punto_incial),
     destinos_intermedios(Destinos_intermedios),
-    write(Destinos_intermedios).
+    append([Punto_incial], Destinos_intermedios, Ruta_completa).
+    give_route(Ruta_completa).
     
 
 nlp_error:-
@@ -57,4 +58,12 @@ respuesta_usuario(Y):-
     readln(X),
     eliminarUltimo(X,Y),
     oracion(Y,[]),!.
-preguntar_intermedio(Lugar):-write("Tiene algun destino intermedio: \n"),respuesta_usuario(Respuesta),lugar(Respuesta,Lugar).
+
+give_route([Nodo,Nodo],Respuesta):- write_ln("Ya llegaste a tu destino.").
+give_route([Nodo_inicial,Nodo_Final],Respuesta):-dijkstra(Nodo_inicial,Nodo_Final,Respuesta).
+give_route([Nodo_inicial,Nodo_sig|Resto],Respuesta):- 
+    dijkstra(Nodo_inicial,Nodo_sig,Res_parcial), 
+    give_route([Nodo_sig|Resto],[Nodo_sig|Respuesta_resto]),
+    append(Res_parcial,Respuesta_resto, Respuesta).
+    
+    

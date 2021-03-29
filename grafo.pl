@@ -9,3 +9,5 @@ arco(alajuela, limon, 80, 3,6).
 arco(limon, heredia, 85, 4,6).
 arco(limon, alajuela, 80, 3,6).
 arco(alajuela, sanjose, 30, 1,3).
+%arco(sanjose,alajuela,30,3,2).
+

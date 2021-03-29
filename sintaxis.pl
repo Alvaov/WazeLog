@@ -1,4 +1,4 @@
-:-consult(grafo).
+:-consult(dijkstra).
 %Análisis de lenguaje estructural
 preposiciones-->[].
 preposiciones-->[a].
