@@ -50,7 +50,7 @@ existe_destino_intermedio(Oracion,Lugar):-
 existe_destino_intermedio(Oracion,Lugar):-
     es_local(Oracion,Local),
     atom_string(Local,Local_string),
-    string_concat("¿Cual ", Local_string, X),
+    string_concat("Cual ", Local_string, X),
     write(X),write("? \n"),
     respuesta_usuario(Y),
     existe_destino_intermedio(Y,Lugar),!.
@@ -66,11 +66,11 @@ hecho(X,Lista):-
 hecho(X,X).
 
 respuesta_usuario(Y):-
-    readln(X),
+    readln(X,_,_,_,lowercase),
     eliminarUltimo(X,Y),
     oracion(Y,[]),!.
 
-give_route([Nodo,Nodo],Respuesta):- 
+give_route([Nodo,Nodo],_):- 
     write_ln("Ya llegaste a tu destino.").
 
 give_route([Nodo_inicial,Nodo_Final],Respuesta):-

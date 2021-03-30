@@ -2,6 +2,8 @@
 %Análisis de lenguaje estructural
 preposiciones-->[].
 preposiciones-->[a].
+preposiciones-->[ante].
+preposiciones-->[de].
 preposiciones-->[en].
 preposiciones-->[entre].
 preposiciones-->[hacia].
@@ -16,6 +18,7 @@ preposiciones-->[sobre].
 preposiciones-->[tras].
 preposiciones-->[versus].
 preposiciones-->[al].
+preposiciones-->[del].
 
 articulo-->[].
 articulo-->[el].
@@ -28,6 +31,7 @@ articulo-->[unos].
 articulo-->[una].
 articulo-->[unas].
 articulo-->[al].
+articulo-->[del].
 
 verbo-->[].
 verbo-->[viaje];[viajo];[viajamos];[viajaremos].
@@ -66,6 +70,7 @@ pronombres-->[ellas].
 pronombres-->[ellos].
 pronombres-->[me].
 pronombres-->[se].
+pronombres-->[nos].
 
 local-->[tienda].
 local-->[pulperia].
@@ -98,7 +103,7 @@ oracion--> adverbio.
 sintagma_nominal-->[].
 sintagma_nominal --> pronombres.
 sintagma_nominal --> preposiciones, articulo, local.
-sintagma_nominal --> preposiciones, {lugar(X)},[X].
+sintagma_nominal --> preposiciones, articulo, preposiciones, {lugar(X)},[X].
 sintagma_verbal --> adverbio, verbo, conjuncion, infinitivo, sintagma_nominal.
 
 
