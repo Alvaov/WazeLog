@@ -51,10 +51,10 @@ verbo-->[muevo];[movi];[movere];[moveremos].
 verbo-->[acudi];[acudire];[acudo];[acudiremos];[acudiran].
 verbo-->[asisto];[asistire];[asitiremos];[asistimos].
 verbo-->[recorro];[recorrere];[recorreremos];[recorremos].
-verbo-->[quiero];[queremos].
+verbo-->[quiero];[queremos];[quisiera].
 verbo-->[estoy];[estamos];[estan],[estaria].
 verbo-->[soy];[es];[eres].
-verbo-->[encuentro];[encontramos].
+verbo-->[encuentro];[encontramos];[encuentra].
 verbo-->[necesito];[necesitamos].
 verbo-->[ocupo];[ocupamos];[ocuparemos];[ocupare].
 verbo-->[gusta];[gustaria];[gustan].
