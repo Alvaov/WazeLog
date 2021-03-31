@@ -41,18 +41,10 @@ nlp_error:-
         *Origen: The ubication found 
 */
 ubicacion(Origen):-
-    respuesta_usuario(Y),
+    esperar_respuesta_valida(Y),
     encontrar_ubicacion(Y,Origen),!.
 
-/*
-     Author: Luis Andrey Zuniga Hernandez
-    Description: Ask the user a ubication until it get a proper ubication, it fails print an error, and tries again
-    ubicacion(-Origen)
-        *Origen: The ubication found 
-*/
-ubicacion(Origen):-
-    nlp_error,
-    ubicacion(Origen),!.
+
 /*
     Author: Luis Andrey Zuniga Hernandez 
     Description: Given a answer from the user, get a destiny in the graph, if there is one
