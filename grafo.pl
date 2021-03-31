@@ -1,3 +1,14 @@
+/*
+    Author: Brian Wagemans
+    Description: A fact that describes an edge on a directed graph
+    arco(From,To,Distance,time_without_traffic_jam,time with traffic jam)
+        *From: Start point
+        *To: End point 
+        *Distance: The distance between the two nodes 
+        *time_without_traffic_jam: The time to go from "From " to "To" in a trafic jam hour
+        *time_with_traffic_jam:The time to go from "From " to "To" in a  not trafic jam hour
+*/
+
 arco(alajuela, heredia, 60, 1,2).
 arco(heredia,alajuela,60,1,2).
 arco(sanjose, heredia, 50, 2,3).
