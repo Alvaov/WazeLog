@@ -1,5 +1,6 @@
 :-consult(dijkstra).
 %Análisis de lenguaje estructural
+puntuacion-->[,];[].
 preposiciones-->[].
 preposiciones-->[a].
 preposiciones-->[ante].
@@ -97,14 +98,13 @@ local-->[automercado].
 
 adverbio-->[si];[no];[].
 conjuncion-->[];[que].
-
 oracion --> sintagma_nominal, sintagma_verbal.
 oracion--> adverbio.
 sintagma_nominal-->[].
 sintagma_nominal --> pronombres.
-sintagma_nominal --> preposiciones, articulo, local.
-sintagma_nominal --> preposiciones, articulo, preposiciones, {lugar(X)},[X].
-sintagma_verbal --> adverbio, verbo, conjuncion, infinitivo, sintagma_nominal.
+sintagma_nominal --> preposiciones,puntuacion, articulo, puntuacion,local.
+sintagma_nominal --> preposiciones,puntuacion, articulo,puntuacion, preposiciones, puntuacion,{lugar(X)},[X].
+sintagma_verbal --> adverbio,puntuacion, verbo,puntuacion, conjuncion,puntuacion, infinitivo,puntuacion, sintagma_nominal.
 
 
 lugar(X):-arco(X,_,_,_,_);arco(_,X,_,_,_).
