@@ -24,6 +24,7 @@ preposiciones-->[tras].
 preposiciones-->[versus].
 preposiciones-->[al].
 preposiciones-->[del].
+preposiciones-->[desde].
 
 %Articulos 
 articulo-->[].
@@ -39,34 +40,38 @@ articulo-->[unas].
 articulo-->[al].
 articulo-->[del].
 
+%sustantivos
+sustantivos-->[destino];[].
 %Verbos 
 verbo-->[].
 verbo-->[viaje];[viajo];[viajamos];[viajaremos].
 verbo-->[voy];[vaya];[va];[vamos];[vayan];[vengo];[van].
 verbo-->[pase];[paso];[pasare];[pasaria];[pasase]. 
 verbo-->[llego];[llegue];[llegare];[llegan].
-verbo-->[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria].
-verbo-->[traslado]; [trasladamos]; [trasladare]; [trasladaremos].
-verbo-->[muevo];[movi];[movere];[moveremos].
+verbo-->[dirijo]; [dirigimos]; [dirigiste];[dirigire];[dirigiria];[dirigirme];[dirigirnos].
+verbo-->[traslado]; [trasladamos]; [trasladare]; [trasladaremos];[trasladarme];[trasladarnos].
+verbo-->[muevo];[movi];[movere];[moveremos];[moverme];[movernos].
 verbo-->[acudi];[acudire];[acudo];[acudiremos];[acudiran].
 verbo-->[asisto];[asistire];[asitiremos];[asistimos].
 verbo-->[recorro];[recorrere];[recorreremos];[recorremos].
 verbo-->[quiero];[queremos];[quisiera].
 verbo-->[estoy];[estamos];[estan],[estaria].
 verbo-->[soy];[es];[eres].
-verbo-->[encuentro];[encontramos];[encuentra].
+verbo-->[encuentro];[encontramos];[encuentra];[encontrarme];[encontrarnos].
 verbo-->[necesito];[necesitamos].
 verbo-->[ocupo];[ocupamos];[ocuparemos];[ocupare].
 verbo-->[gusta];[gustaria];[gustan].
 verbo-->[tengo];[tenemos];[tendria];[tendriamos].
 verbo-->[ubica];[ubicamos];[ubican];[ubico].   
-verbo-->[queda];[quedo];[quedan].
+verbo-->[queda];[quedo];[quedan];[quedarme];[quedarnos];[quedaremos].
+verbo-->[desplazo];[desplaza];[desplazaremos];[desplazare];[desplazarme];[desplazarnos];[desplazaremos].
 
 %Infinitivos
 infinitivo-->[].
 infinitivo-->[ir];[viajar];[venir];[pasar];[llegar];[trasladar].
 infinitivo-->[mover];[acudir];[asistir];[recorrer];[querer];[estar].
 infinitivo-->[encontrar];[necesitar];[dirigir],[gustar];[tener];[ubicar].
+infinitivo-->[desplazar].
 
 %Pronombres 
 pronombres-->[].
@@ -79,6 +84,7 @@ pronombres-->[ellos].
 pronombres-->[me].
 pronombres-->[se].
 pronombres-->[nos].
+pronombres-->[mi].
 
 %locales de la ciudad
 local-->[tienda].
@@ -105,11 +111,13 @@ local-->[ferreteria].
 local-->[automercado].
 
 %Adverbios 
-adverbio-->[si];[no];[ninguno];[ninguna];[].
+adverbio-->[si];[no];[ninguno];[ninguna];[tambien];[finalmente];[claro];[].
 
 %Conjunciones 
-conjuncion-->[];[que].
+conjuncion-->[que];[].
 
+%adjetivos
+adjetivos-->[ultimo];[primero];[intermedio];[].
 /*
     Based: Universidad de sevilla's code
     Modified: Alejandro Vasquez
@@ -152,7 +160,7 @@ sintagma_nominal --> preposiciones,puntuacion, articulo,puntuacion, preposicione
     Modified: Alejandro Vasquez
     Descripcion: The sintagma verba; can have a adverb, a verb, a comjuntion, and infinitive and a sintagma nominal, if one of them can be void 
 */
-sintagma_verbal --> adverbio,puntuacion, verbo,puntuacion, conjuncion,puntuacion, infinitivo,puntuacion, sintagma_nominal.
+sintagma_verbal --> adverbio, puntuacion, pronombres ,puntuacion, adjetivos, puntuacion, sustantivos, puntuacion, verbo, puntuacion, conjuncion, puntuacion, preposiciones, puntuacion, infinitivo,puntuacion, conjuncion, puntuacion, sintagma_nominal.
 
 /*  
     Author: Alejandro Vasquez 
