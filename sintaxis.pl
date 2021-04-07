@@ -105,7 +105,7 @@ local-->[ferreteria].
 local-->[automercado].
 
 %Adverbios 
-adverbio-->[si];[no];[].
+adverbio-->[si];[no];[ninguno];[ninguna];[].
 
 %Conjunciones 
 conjuncion-->[];[que].

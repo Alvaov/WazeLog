@@ -172,7 +172,9 @@ esperar_respuesta_valida(Respuesta):-
 */
 
 verificacion_intermedia(Oracion,[]):-
-    miembro(no,Oracion).
+    miembro(no,Oracion);
+    miembro(ninguna,Oracion);
+    miembro(ninguno,Oracion).
 /*
     Author: Alejandro Vasquez 
     Description: verifies if the input has a place, adds it to the list, a calls destinos_intermedios
