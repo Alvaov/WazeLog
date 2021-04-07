@@ -9,17 +9,47 @@
         *time_with_traffic_jam:The time to go from "From " to "To" in a  not trafic jam hour
 */
 
-arco(alajuela, heredia, 60, 1,2).
-arco(heredia,alajuela,60,1,2).
-arco(sanjose, heredia, 50, 2,3).
-arco(puntarenas, heredia, 80, 4,5).
-arco(guanacaste, heredia, 70, 2,3).
-arco(guanacaste, alajuela, 110, 4,7).
-arco(alajuela, guanacaste, 105, 4,8).
-arco(alajuela, puntarenas, 60, 3,4).
-arco(alajuela, limon, 80, 3,6).
-arco(limon, heredia, 85, 4,6).
-arco(limon, alajuela, 80, 3,6).
-arco(alajuela, sanjose, 30, 1,3).
-arco(sanjose,alajuela,30,3,2).
+arco(pacayas,cartago,13,1,1).
+arco(pacayas,tresrios,15,1,1).
+arco(pacayas,cervantes,8,1,1).
 
+arco(cartago,pacayas,13,1,1).
+arco(cartago,paraiso,10,1,1).
+arco(cartago,tresrios,8,1,1).
+arco(cartago,sanjose,20,1,1).
+arco(cartago,musgoverde,10,1,1).
+
+arco(tresrios,pacayas,15,1,1).
+arco(tresrios,sanjose,8,1,1).
+
+arco(turrialba,pacayas,18,1,1).
+arco(turrialba,cachi,40,1,1).
+
+arco(cachi,paraiso,10,1,1).
+arco(cachi,turrialba,40,1,1).
+arco(cachi,cervantes,7,1,1).
+arco(cachi,orosi,12,1,1).
+
+
+arco(paraiso,cervantes,4,1,1).
+arco(paraiso,cachi,10,1,1).
+arco(paraiso,orochi,8,1,1).
+
+arco(cervantes,juanvinas,5,1,1).
+arco(cervantes,pacayas,8,1,1).
+arco(cervantes,cachi,7,1,1).
+
+arco(orosi,cachi,12,1,1).
+arco(orosi,paraiso,8,1,1).
+
+arco(sanjose,cartago,20,1,1).
+arco(sanjose,corralito,22,1,1).
+
+arco(juanvinas,turrialba,4,1,1).
+
+
+arco(musgoverde,cartago,10,1,1).
+arco(musgoverde,corralito,6,1,1).
+
+arco(corralito,musgoverde,6,1,1).
+arco(corralito,sanjose,22,1,1).
